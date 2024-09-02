@@ -1,0 +1,10 @@
+.inner-todo-div {
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+li:hover {
+  background-color: rgb(189, 189, 189);
+  transition: 200ms;
+}
