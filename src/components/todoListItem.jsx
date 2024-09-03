@@ -32,13 +32,13 @@ function TodoListItem({
               type="text"
               value={editText}
               onChange={handleTextChange}
-              style={{ border: "none", width: "300px" }}
+              style={{ border: "none", width: "200px" }}
             />
             <br />
             <span className="text-black-50">{createdAt}</span>
           </div>
         )}
-        <div className="inner-todo-div">
+        <div className="inner-todo-div gap-0">
           <span
             className="btn btn-sm btn-danger"
             onClick={() => removeTodo(id)}
@@ -49,6 +49,7 @@ function TodoListItem({
             type="checkbox"
             checked={isDone}
             onChange={(e) => changeIsDone(id, e.target.checked)}
+            style={{ width: "20px" }}
           />
         </div>
       </li>
