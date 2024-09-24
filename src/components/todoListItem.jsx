@@ -11,7 +11,6 @@ function TodoListItem({
   category
 }) {
   const [editText, setEditText] = useState(text);
-
   const handleTextChange = (e) => {
     setEditText(e.target.value);
     onChange(e.target.value);
@@ -21,7 +20,6 @@ function TodoListItem({
       <li className="list-group-item d-flex justify-content-between align-items-start w-100">
         {isDone ? (
           <div>
-            <span>{category}</span>
             <span className="text-decoration-line-through">{text}</span>
             <br />
             <span className="text-decoration-line-through text-black-50">
@@ -29,7 +27,8 @@ function TodoListItem({
             </span>
           </div>
         ) : (
-          <div>
+          <div className="d-flex flex-column">
+            {category === "none" ? null : <span className="bold">Category: <strong>{category}</strong></span>}
             <input
               type="text"
               value={editText}

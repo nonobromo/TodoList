@@ -8,6 +8,7 @@ export function CategoryContext({children}){
 
     function handleCategory(e){
             setCategory(e.target.value)
+            console.log(category)
     }
 
     return(
