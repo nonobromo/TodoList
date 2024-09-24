@@ -3,7 +3,7 @@ import TodoListItem from "./todoListItem";
 
 function TodoList({ todos, removeTodo, changeIsDone, changeText }) {
   const sortedTodos = [...todos].sort((a, b) => (a.isDone > b.isDone ? 1 : -1));
-
+  console.log(todos)
   return (
     <div className="list">
       <div className="d-flex justify-content-between">
@@ -33,6 +33,7 @@ function TodoList({ todos, removeTodo, changeIsDone, changeText }) {
                   isDone={todo.isDone}
                   createdAt={todo.createdAt}
                   onChange={(text) => changeText(todo.id, text)}
+                  category={todo.category}
                 />
               );
             })

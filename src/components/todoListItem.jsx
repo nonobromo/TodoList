@@ -8,6 +8,7 @@ function TodoListItem({
   isDone,
   createdAt,
   onChange,
+  category
 }) {
   const [editText, setEditText] = useState(text);
 
@@ -20,6 +21,7 @@ function TodoListItem({
       <li className="list-group-item d-flex justify-content-between align-items-start w-100">
         {isDone ? (
           <div>
+            <span>{category}</span>
             <span className="text-decoration-line-through">{text}</span>
             <br />
             <span className="text-decoration-line-through text-black-50">

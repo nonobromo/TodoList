@@ -1,3 +1,4 @@
+import { useCategory } from "../context/category.context";
 import TodoForm from "./todoForm";
 import TodoList from "./todoList";
 import { useState, useEffect } from "react";
@@ -10,7 +11,7 @@ function Todo() {
 
     return JSON.parse(localValue);
   });
-
+  const {category} = useCategory()
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -28,6 +29,7 @@ function Todo() {
           text: input,
           isDone: false,
           createdAt: String(new Date()).split(" GMT")[0],
+          category: category,
         },
       ]);
       setInput("");
